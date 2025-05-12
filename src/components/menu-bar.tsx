@@ -1,58 +1,44 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, FolderGit2, Home, Mail, User } from "lucide-react";
 import Link from "next/link";
-import type * as React from "react";
 
 interface MenuItem {
-  icon: React.ReactNode;
   label: string;
   href: string;
   gradient: string;
-  iconColor: string;
 }
 
 const menuItems: MenuItem[] = [
   {
-    icon: <Home className="h-4 w-4" />,
     label: "Home",
     href: "/",
     gradient:
       "radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(37,99,235,0.06) 50%, rgba(29,78,216,0) 100%)",
-    iconColor: "text-blue-500",
   },
   {
-    icon: <User className="h-4 w-4" />,
     label: "About",
     href: "/about",
     gradient:
       "radial-gradient(circle, rgba(249,115,22,0.15) 0%, rgba(234,88,12,0.06) 50%, rgba(194,65,12,0) 100%)",
-    iconColor: "text-orange-500",
   },
   {
-    icon: <Code className="h-4 w-4" />,
     label: "Tech",
     href: "/tech",
     gradient:
       "radial-gradient(circle, rgba(34,197,94,0.15) 0%, rgba(22,163,74,0.06) 50%, rgba(21,128,61,0) 100%)",
-    iconColor: "text-green-500",
   },
   {
-    icon: <FolderGit2 className="h-4 w-4" />,
     label: "Projects",
     href: "/projects",
     gradient:
       "radial-gradient(circle, rgba(168,85,247,0.15) 0%, rgba(147,51,234,0.06) 50%, rgba(126,34,206,0) 100%)",
-    iconColor: "text-purple-500",
   },
   {
-    icon: <Mail className="h-4 w-4" />,
     label: "Contact",
     href: "/contact",
     gradient:
       "radial-gradient(circle, rgba(239,68,68,0.15) 0%, rgba(220,38,38,0.06) 50%, rgba(185,28,28,0) 100%)",
-    iconColor: "text-red-500",
   },
 ];
 
@@ -99,19 +85,19 @@ const sharedTransition = {
 export function MenuBar() {
   return (
     <motion.nav
-      className="p-1.5 rounded-xl bg-gradient-to-b from-background/80 to-background/40 backdrop-blur-lg border border-border/40 shadow-lg relative overflow-hidden w-fit mx-auto"
+      className="p-2 rounded-sm bg-gradient-to-b from-background/80 to-background/40 backdrop-blur-lg border border-border/40 shadow-lg relative overflow-hidden w-fit mx-auto"
       initial="initial"
       whileHover="hover"
     >
       <motion.div
-        className="absolute -inset-2 bg-gradient-radial from-transparent via-blue-400/30 to-transparent rounded-2xl z-0 pointer-events-none"
+        className="absolute -inset-2 bg-gradient-radial from-transparent via-blue-400/30 to-transparent rounded-sm z-0 pointer-events-none"
         variants={navGlowVariants}
       />
-      <ul className="flex items-center gap-1.5 relative z-10">
-        {menuItems.map((item, index) => (
+      <ul className="flex items-center gap-7 relative z-10">
+        {menuItems.map((item) => (
           <motion.li key={item.label} className="relative">
             <motion.div
-              className="block rounded-lg overflow-visible group relative"
+              className="block rounded-sm overflow-visible group relative"
               style={{ perspective: "600px" }}
               whileHover="hover"
               initial="initial"
@@ -122,12 +108,12 @@ export function MenuBar() {
                 style={{
                   background: item.gradient,
                   opacity: 0,
-                  borderRadius: "12px",
+                  borderRadius: "8px",
                 }}
               />
               <Link href={item.href} className="block">
                 <motion.div
-                  className="flex items-center gap-1.5 px-3 py-1.5 relative z-10 bg-transparent text-muted-foreground group-hover:text-foreground transition-colors rounded-lg text-sm"
+                  className="flex items-center gap-1 px-1.5 py-0.5 relative z-10 bg-transparent text-muted-foreground group-hover:text-foreground transition-colors rounded-sm text-xxs font-[Audiowide]"
                   variants={itemVariants}
                   transition={sharedTransition}
                   style={{
@@ -135,17 +121,12 @@ export function MenuBar() {
                     transformOrigin: "center bottom",
                   }}
                 >
-                  <span
-                    className={`transition-colors duration-300 group-hover:${item.iconColor} text-foreground`}
-                  >
-                    {item.icon}
-                  </span>
                   <span>{item.label}</span>
                 </motion.div>
               </Link>
               <Link href={item.href} className="block">
                 <motion.div
-                  className="flex items-center gap-1.5 px-3 py-1.5 absolute inset-0 z-10 bg-transparent text-muted-foreground group-hover:text-foreground transition-colors rounded-lg text-sm"
+                  className="flex items-center gap-1 px-1.5 py-0.5 absolute inset-0 z-10 bg-transparent text-muted-foreground group-hover:text-foreground transition-colors rounded-sm text-xxs font-[Audiowide]"
                   variants={backVariants}
                   transition={sharedTransition}
                   style={{
@@ -154,11 +135,6 @@ export function MenuBar() {
                     rotateX: 90,
                   }}
                 >
-                  <span
-                    className={`transition-colors duration-300 group-hover:${item.iconColor} text-foreground`}
-                  >
-                    {item.icon}
-                  </span>
                   <span>{item.label}</span>
                 </motion.div>
               </Link>

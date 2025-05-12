@@ -1,10 +1,17 @@
 import { AnimationProvider } from "@/components/animation-provider";
 import { MenuBar } from "@/components/menu-bar";
-import { Inter } from "next/font/google";
+import { Audiowide, Inter, Montserrat } from "next/font/google";
 import type React from "react";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+const audiowide = Audiowide({
+  weight: "400",
+  subsets: ["latin"],
+});
+const montserrat = Montserrat({
+  subsets: ["latin"],
+});
 
 export default function RootLayout({
   children,
@@ -13,8 +20,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} dark`}>
-        <div className="min-h-screen flex flex-col">
+      <body
+        className={`${inter.className} ${audiowide.className} ${montserrat.className} dark`}
+      >
+        <div className="min-h-screen">
           <header className="fixed top-4 left-0 right-0 z-50 w-full px-4">
             <MenuBar />
           </header>

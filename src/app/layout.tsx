@@ -1,5 +1,5 @@
-import { AnimationProvider } from "@/components/animation-provider";
-import { MenuBar } from "@/components/menu-bar";
+import { AnimationProvider } from "@/animation/animation-provider";
+import { MainNav } from "@/components/main-nav";
 import { Audiowide, Inter, Montserrat } from "next/font/google";
 import type React from "react";
 import "./globals.css";
@@ -25,7 +25,9 @@ export default function RootLayout({
       >
         <div className="min-h-screen">
           <header className="fixed top-4 left-0 right-0 z-50 w-full px-4">
-            <MenuBar />
+            <div className="mx-auto w-fit">
+              <MainNav />
+            </div>
           </header>
           <main className="pt-20">
             <AnimationProvider>{children}</AnimationProvider>

@@ -1,4 +1,4 @@
-import { Template } from "@/components/template";
+import { Template } from "@/animation/template";
 
 export default function About() {
   return (

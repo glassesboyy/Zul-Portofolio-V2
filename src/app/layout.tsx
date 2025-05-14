@@ -4,13 +4,15 @@ import { Audiowide, Inter, Montserrat } from "next/font/google";
 import type React from "react";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 const audiowide = Audiowide({
   weight: "400",
   subsets: ["latin"],
+  display: "swap",
 });
 const montserrat = Montserrat({
   subsets: ["latin"],
+  display: "swap",
 });
 
 export default function RootLayout({
@@ -21,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+        suppressHydrationWarning
         className={`${inter.className} ${audiowide.className} ${montserrat.className} dark`}
       >
         <div className="min-h-screen">

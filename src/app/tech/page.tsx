@@ -1,15 +1,14 @@
+"use client";
 import { Template } from "@/animation/template";
+import { TechStack } from "@/components/tech-stack";
 
 export default function Tech() {
   return (
     <Template>
-      <div className="bg-black flex flex-col items-center justify-center">
-        <h1 className="text-3xl font-bold font-[Audiowide]">
-          Welcome to Tech Page
-        </h1>
-        <p className="text-xs text-white text-center font-[Montserrat] font-light">
-          Subheading Tech Page Here..
-        </p>
+      <div className="w-full overflow-hidden">
+        <div className="mx-auto mt-8 w-full max-w-2xl">
+          <TechStack />
+        </div>
       </div>
     </Template>
   );

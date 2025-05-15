@@ -1,16 +1,18 @@
 "use client";
 import { OrbitingCircles } from "@/ui/orbiting-circles";
 import {
-  SiExpress,
+  SiEslint,
+  SiFigma,
+  SiFramer,
   SiGit,
   SiJavascript,
-  SiMysql,
   SiNextdotjs,
-  SiNodedotjs,
-  SiPrisma,
+  SiNpm,
   SiReact,
+  SiRedux,
   SiTailwindcss,
   SiTypescript,
+  SiVite,
 } from "react-icons/si";
 
 export function TechStack() {
@@ -40,10 +42,10 @@ export function TechStack() {
           className="z-10"
         >
           <div className="text-white/80 cursor-pointer hover:scale-125 transition-transform duration-300">
-            <SiTypescript size={35} />
+            <SiJavascript size={35} />
           </div>
           <div className="text-white/80 cursor-pointer hover:scale-125 transition-transform duration-300">
-            <SiJavascript size={35} />
+            <SiTypescript size={35} />
           </div>
           <div className="text-white/80 cursor-pointer hover:scale-125 transition-transform duration-300">
             <SiReact size={35} />
@@ -52,40 +54,40 @@ export function TechStack() {
             <SiNextdotjs size={35} />
           </div>
           <div className="text-white/80 cursor-pointer hover:scale-125 transition-transform duration-300">
-            <SiTailwindcss size={35} />
+            <SiVite size={35} />
           </div>
         </OrbitingCircles>
 
         {/* Middle circle */}
         <OrbitingCircles iconSize={25} radius={100} duration={25} reverse>
           <div className="text-white/60 cursor-pointer hover:scale-125 transition-transform duration-300">
-            <SiNodedotjs size={27} />
+            <SiTailwindcss size={27} />
           </div>
           <div className="text-white/60 cursor-pointer hover:scale-125 transition-transform duration-300">
-            <SiMysql size={27} />
+            <SiRedux size={27} />
           </div>
           <div className="text-white/60 cursor-pointer hover:scale-125 transition-transform duration-300">
-            <SiExpress size={27} />
+            <SiEslint size={27} />
           </div>
           <div className="text-white/60 cursor-pointer hover:scale-125 transition-transform duration-300">
-            <SiPrisma size={27} />
+            <SiFramer size={27} />
           </div>
         </OrbitingCircles>
 
         {/* Inner circle */}
         <OrbitingCircles iconSize={20} radius={50} duration={20}>
           <div className="text-white/40 cursor-pointer hover:scale-125 transition-transform duration-300">
-            <SiGit size={20} />
+            <SiFigma size={20} />
           </div>
           <div className="text-white/40 cursor-pointer hover:scale-125 transition-transform duration-300">
             <SiGit size={20} />
           </div>
           <div className="text-white/40 cursor-pointer hover:scale-125 transition-transform duration-300">
-            <SiGit size={20} />
+            <SiNpm size={20} />
           </div>
         </OrbitingCircles>
         <div className="absolute -bottom-4 left-0 right-0 text-center text-xs text-white/40 pb-4">
-          anjay mabar lek..
+          Crafting digital experiences with my favorite tools
         </div>
       </div>
 
